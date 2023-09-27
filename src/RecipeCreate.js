@@ -6,7 +6,6 @@ function RecipeCreate({addRecipe}) {
   // TODO: Add the required input and textarea form elements.
   // TODO: Add the required submit and change handlers
 
-/*
   const initInputs = {
     name: "",
     cuisine: "",
@@ -14,7 +13,7 @@ function RecipeCreate({addRecipe}) {
     ingredients: "",
     preparation: ""
   }
-  const [inputs, setInputs] = useState(initInputs)
+  const [inputs, setInputs] = useState({...initInputs})
   const handleChange = ({target}) => {
     setInputs((prevState) => ({...prevState, [target.name]: target.value}))
   }
@@ -22,23 +21,6 @@ function RecipeCreate({addRecipe}) {
     evt.preventDefault()
     addRecipe({...inputs})
     setInputs(initInputs)
-  }
-*/
-
-  const [name, setName] = useState("");
-  const [cuisine, setCuisine] = useState("");
-  const [photo, setPhoto] = useState("");
-  const [ingredients, setIngredients] = useState("");
-  const [preparation, setPreparation] = useState("");
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
-    addRecipe({name, cuisine, photo, ingredients, preparation})
-    setName("")
-    setCuisine("")
-    setPhoto("")
-    setIngredients("")
-    setPreparation("")
   }
 
   return (
@@ -51,8 +33,8 @@ function RecipeCreate({addRecipe}) {
                   name="name"
                   placeholder="Name"
                   type="text"
-                  value={name}
-                  onChange={(({target}) => setName(target.value))}
+                  value={inputs.name}
+                  onChange={handleChange}
               />
             </td>
             <td>
@@ -60,8 +42,8 @@ function RecipeCreate({addRecipe}) {
                   name="cuisine"
                   placeholder="Cuisine"
                   type="text"
-                  value={cuisine}
-                  onChange={(({target}) => setCuisine(target.value))}
+                  value={inputs.cuisine}
+                  onChange={handleChange}
               />
             </td>
             <td>
@@ -69,24 +51,24 @@ function RecipeCreate({addRecipe}) {
                   name="photo"
                   placeholder="URL"
                   type="url"
-                  value={photo}
-                  onChange={(({target}) => setPhoto(target.value))}
+                  value={inputs.photo}
+                  onChange={handleChange}
               />
             </td>
             <td>
               <textarea
                   name="ingredients"
                   placeholder="Ingredients"
-                  value={ingredients}
-                  onChange={(({target}) => setIngredients(target.value))}
+                  value={inputs.ingredients}
+                  onChange={handleChange}
               />
             </td>
             <td>
               <textarea
                   name="preparation"
                   placeholder="Preparation"
-                  value={preparation}
-                  onChange={(({target}) => setPreparation(target.value))}
+                  value={inputs.preparation}
+                  onChange={handleChange}
               />
             </td>
             <td>
