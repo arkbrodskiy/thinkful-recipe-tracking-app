@@ -6,25 +6,6 @@ function RecipeCreate({addRecipe}) {
   // TODO: Add the required input and textarea form elements.
   // TODO: Add the required submit and change handlers
 
-/*
-  const initInputs = {
-    name: "",
-    cuisine: "",
-    photo: "",
-    ingredients: "",
-    preparation: ""
-  }
-  const [inputs, setInputs] = useState(initInputs)
-  const handleChange = ({target}) => {
-    setInputs((prevState) => ({...prevState, [target.name]: target.value}))
-  }
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
-    addRecipe({...inputs})
-    setInputs(initInputs)
-  }
-*/
-
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [photo, setPhoto] = useState("");
